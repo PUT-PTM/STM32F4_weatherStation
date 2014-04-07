@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.7.4 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=testowy.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\testowy -TC:\CooCox\CoIDE\configuration\ProgramData\testowy/arm-gcc-link.ld -g">
+      <target file="testowy.elf" lastModified="1453d86e07c">
+         <source file="..\obj\stm32f4xx_syscfg.o" lastModified="14538dc3b9b"/>
+         <source file="..\obj\stm32f4xx_dac.o" lastModified="14538dc3c0f"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14538d7ff33"/>
+         <source file="..\obj\main.o" lastModified="1453d86da1e"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14538dc3d19"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="14538dc3daf"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14538dc3e24"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14538dc3e85"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="14538dc3f0b"/>
+         <source file="..\obj\stm32f4xx_spi.o" lastModified="14538dc3f94"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="14538dc402b"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="14538dc4091"/>
+         <source file="..\obj\misc.o" lastModified="14538dc40f1"/>
+         <source file="..\obj\stm32f4_discovery_lis302dl.o" lastModified="14538dc416e"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="14538dc4271"/>
+      </target>
+   </processor>
+</history>
