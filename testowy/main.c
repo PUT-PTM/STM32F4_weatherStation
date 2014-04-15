@@ -27,7 +27,7 @@ void init_I2C1(void){
 	/* enable APB1 peripheral clock for I2C1*/
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1, ENABLE);
 
-	/* enable the peripheral clock for the pins used by	PB6 for I2C SCL and PB9 for I2C1_SDL*/
+	/* enable the peripheral clock for the pins used by	PB6 for I2C SCL and PB9 for I2C1_SDA*/
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 
 	/* This sequence sets up the I2C1SDA and I2C1SCL pins so they work correctly with the I2C1 peripheral*/
