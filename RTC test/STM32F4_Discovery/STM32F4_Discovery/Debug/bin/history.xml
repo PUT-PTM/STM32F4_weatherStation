@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=STM32F4_Discovery.map -Os --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\STM32F4_Discovery -TC:\CooCox\CoIDE\configuration\ProgramData\STM32F4_Discovery/arm-gcc-link.ld -g -L..\..\.. -lm">
+      <target file="STM32F4_Discovery.elf" lastModified="145aa4734f3">
+         <source file="..\obj\i2c.o" lastModified="145aa472d48"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="145a8b87b5a"/>
+         <source file="..\obj\main.o" lastModified="145aa472e9b"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="145aa472f98"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="145aa47306b"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="145aa4730d1"/>
+         <source file="..\obj\syscalls.o" lastModified="145aa47314a"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="145aa473241"/>
+         <source file="..\obj\misc.o" lastModified="145aa47330e"/>
+      </target>
+   </processor>
+</history>
