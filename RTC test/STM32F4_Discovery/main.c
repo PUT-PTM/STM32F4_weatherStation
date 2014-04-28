@@ -146,7 +146,9 @@ int main(void)
            read_from_eeprom(myStri, 0x0080);
            GPIO_ResetBits(GPIOD, GPIO_Pin_13|GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15);
 
-  //--------------------------------------------------- RTC
+  //--------------------------------------------------- RTC jeszcze nie dziala
+  
+  
 /*  static const uint8_t pgm_regs[] =
       {
   		0x00,       //Start Addr
