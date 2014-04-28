@@ -1,0 +1,9 @@
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\bin\Debug\StacjaMeteo.exe.config
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\obj\Debug\StacjaMeteo.csprojResolveAssemblyReference.cache
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\obj\Debug\StacjaMeteo.Form1.resources
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\obj\Debug\StacjaMeteo.Properties.Resources.resources
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\obj\Debug\StacjaMeteo.csproj.GenerateResource.Cache
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\bin\Debug\StacjaMeteo.exe
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\bin\Debug\StacjaMeteo.pdb
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\obj\Debug\StacjaMeteo.exe
+C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteo\StacjaMeteo\obj\Debug\StacjaMeteo.pdb
