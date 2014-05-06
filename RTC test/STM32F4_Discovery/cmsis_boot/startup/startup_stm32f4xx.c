@@ -21,7 +21,7 @@
     
 
 /*----------Stack Configuration-----------------------------------------------*/
-#define STACK_SIZE       0x00000200      /*!< The Stack size suggest using even number    */
+#define STACK_SIZE       0x00002000    /*!< Stack size (in Words => 8 kBytes) */
 __attribute__ ((section(".co_stack")))
 unsigned long pulStack[STACK_SIZE];
 
@@ -30,10 +30,8 @@ unsigned long pulStack[STACK_SIZE];
 #define WEAK __attribute__ ((weak))
 
 
-
 /*----------Declaration of the default fault handlers-------------------------*/
 /* System exception vector handler */
-__attribute__ ((used))
 void WEAK  Reset_Handler(void);
 void WEAK  NMI_Handler(void);
 void WEAK  HardFault_Handler(void);
@@ -140,7 +138,7 @@ extern void _eram;               /*!< End address for ram                     */
 
 /*----------Function prototypes-----------------------------------------------*/
 extern int main(void);           /*!< The entry point for the application.    */
-//extern void SystemInit(void);    /*!< Setup the microcontroller system(CMSIS) */
+extern void SystemInit(void);    /*!< Setup the microcontroller system(CMSIS) */
 void Default_Reset_Handler(void);   /*!< Default reset handler                */
 static void Default_Handler(void);  /*!< Default exception handler            */
 
@@ -150,11 +148,12 @@ static void Default_Handler(void);  /*!< Default exception handler            */
   *       must be placed on this to ensure that it ends up at physical address
   *       0x00000000.
   */
-__attribute__ ((used,section(".isr_vector")))
+__attribute__ ((section(".isr_vector")))
 void (* const g_pfnVectors[])(void) =
 {
   /*----------Core Exceptions------------------------------------------------ */
-  (void *)&pulStack[STACK_SIZE],     /*!< The initial stack pointer         */
+  /*(void *)&pulStack[STACK_SIZE-1],*/         /*!< The initial stack pointer */
+  (void(*)(void))((unsigned long)pulStack+sizeof(pulStack)), /*psa 17.10.2012 */
   Reset_Handler,             /*!< Reset Handler                               */
   NMI_Handler,               /*!< NMI Handler                                 */
   HardFault_Handler,         /*!< Hard Fault Handler                          */
@@ -294,6 +293,7 @@ void Default_Reset_Handler(void)
         "  ORR R1, R1, #(0xF << 20)\n"
         "  STR R1, [R0]");
 #endif	
+  SystemInit();
 
   /* Call the application's entry point.*/
   main();

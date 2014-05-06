@@ -16,18 +16,19 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" partName="startup_stm32f4xx.c" path="C:/Users/Kllaudia/Documents/GitHub/STM32F4_weatherStation/testowy/cmsis_boot/startup/startup_stm32f4xx.c" title="startup_stm32f4xx.c" tooltip="C:/Users/Kllaudia/Documents/GitHub/STM32F4_weatherStation/testowy/cmsis_boot/startup/startup_stm32f4xx.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/cmsis_boot/startup/startup_stm32f4xx.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="14795" selectionTopPixel="3990"/>
-</editor>
 <editor id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" partName="Repository" title="Repository" tooltip="Repository" workbook="DefaultEditorWorkbook">
-<input factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory">&#x0A;<subPage horizontalPosition="0" selectedItemId="0" subPageIndex="2" verticalPosition="0"/>
+<input factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory">
+<subPage horizontalPosition="0" selectedItemId="0" subPageIndex="0" verticalPosition="0"/>
 </input>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Kllaudia/Documents/GitHub/STM32F4_weatherStation/testowy/main.c" title="main.c" tooltip="C:/Users/Kllaudia/Documents/GitHub/STM32F4_weatherStation/testowy/main.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/main.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="510" selectionTopPixel="102"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="2">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="7">
 <expanded>
 <element path="/testowy"/>
 <element path="/testowy/cmsis"/>
@@ -37,7 +38,7 @@
 <element path="/testowy/cmsis_lib/include"/>
 </expanded>
 <selection>
-<element path="/testowy/cmsis_lib/include/stm32f4xx_exti.h"/>
+<element path="/testowy/main.c"/>
 </selection>
 </viewState>
 </view>
@@ -240,6 +241,10 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/stm32f4_discovery_lis302dl.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/stm32f4_discovery_lis302dl.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/cmsis_boot/startup/startup_stm32f4xx.c"/>
+<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
+<subPage horizontalPosition="0" selectedItemId="0" subPageIndex="0" verticalPosition="0"/>
+</editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/main.c"/>
 </editors>
 <item historyLabel="system_stm32f4xx.c" index="0">
 <position info="not_deleted" x="15590" y="0"/>
@@ -354,8 +359,12 @@
 <item historyLabel="stm32f4_discovery_lis302dl.c" index="10">
 <position info="not_deleted" x="1409" y="0"/>
 </item>
-<item active="true" historyLabel="startup_stm32f4xx.c" index="11">
+<item historyLabel="startup_stm32f4xx.c" index="11">
 <position info="not_deleted" x="14795" y="0"/>
+</item>
+<item historyLabel="Repository" index="12"/>
+<item active="true" historyLabel="main.c" index="13">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -364,11 +373,11 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowy/main.c">
+<persistable path="/testowy/main.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_i2c.h" tooltip="RTC/cmsis_lib/include/stm32f4xx_i2c.h">
 <persistable path="/RTC/cmsis_lib/include/stm32f4xx_i2c.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_i2c.c" tooltip="testowy/cmsis_lib/source/stm32f4xx_i2c.c">
-<persistable path="/testowy/cmsis_lib/source/stm32f4xx_i2c.c"/>
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="math.h" tooltip="C:\Users\Kllaudia\Desktop\kolokwium\cmsis_lib\include\math.h">
 <persistable uri="file:/C:/Users/Kllaudia/Desktop/kolokwium/cmsis_lib/include/math.h"/>
@@ -407,8 +416,8 @@
 <persistable>&#x0A;<subPage/>
 </persistable>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="powtorka_dioda/main.c">
-<persistable path="/powtorka_dioda/main.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="Zad1_kol/cmsis_boot/startup/startup_stm32f4xx.c">
+<persistable path="/Zad1_kol/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </file>
 </mruList>
 </workbench>
