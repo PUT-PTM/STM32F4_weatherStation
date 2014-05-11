@@ -39,7 +39,7 @@
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
-        <Option name="Path" value="C:/Users/Kllaudia/Desktop/STM32F4_Discovery/"/>
+        <Option name="Path" value="./"/>
         <Option name="Name" value="STM32F4_Discovery"/>
         <Option name="HEX" value="1"/>
         <Option name="BIN" value="1"/>
@@ -66,7 +66,7 @@
       <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
-      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="E:/CooCox/CoIDE/flash/STM32F4xx_1024.elf"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.jflashtool" value=""/>
       <Option name="org.coocox.codebugger.gdbjtag.coredebugInRam" value="0"/>
       <Option name="org.coocox.codebugger.gdbjtag.core.jflashscript" value=""/>

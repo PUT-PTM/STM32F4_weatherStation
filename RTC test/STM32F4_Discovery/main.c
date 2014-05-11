@@ -4,7 +4,7 @@
 /*---------------------------- Symbol Define -------------------------------*/
 
 #define GPIO_TIMEOUT      (0x100000)  // timeout for blinking LEDs
-#define I2C_EEPROM_ADDR   (0xD0)     // EEPROM I2C-Bus device address
+#define I2C_EEPROM_ADDR   (0xD0) //D0    // EEPROM I2C-Bus device address
 #define I2C_EEPROM_PAGE   (32)       // EEPROM memory page size
 /*---------------------------- Variable Define -----------------------------*/
 
@@ -16,7 +16,7 @@ void LED_Init(void);
 
 
 
-
+uint16_t temp;
 
 
 char * mystr = "String-D @ EEPROM-Addr[0x0080]";
@@ -55,11 +55,13 @@ void write_rtc(uint8_t* regs)
   I2C_WriteTransfer(I2C_EEPROM_ADDR, regs, sizeof(regs), 0, sizeof(0x0040));
   GPIO_SetBits(GPIOD,GPIO_Pin_14|GPIO_Pin_15);
 }
+
 void read_from_eeprom(char* myString, uint16_t addr_ptr)
 {
   while (I2C_CheckDevice(I2C_EEPROM_ADDR) != OK);  // wait until EEPROM is ready
   I2C_ReadTransfer(I2C_EEPROM_ADDR, myString, I2C_EEPROM_PAGE, addr_ptr, sizeof(addr_ptr));
 }
+
 void read_rtc(uint8_t* rbuf)
 {
   while (I2C_CheckDevice(I2C_EEPROM_ADDR) != OK);  // wait until EEPROM is ready
@@ -118,17 +120,12 @@ int main(void)
   LED_Init();
   GPIO_SetBits(GPIOD,GPIO_Pin_14);
   I2C_BusInit();
-//  printf("\n-----------------------------------\n");
-  //printf("STM32F4-Discovery Board is booting!\n");
-  //printf("UART and I2C-Bus Demo for STM32F4  \n");
-  //printf("-----------------------------------\n");
-  while(I2C_CheckDevice(I2C_EEPROM_ADDR)!= OK){
+
+  while(I2C_CheckDevice(I2C_EEPROM_ADDR)!= OK){  };
+  GPIO_SetBits(GPIOD,GPIO_Pin_12);
 
 
-  };
-  GPIO_ResetBits(GPIOD, GPIO_Pin_13|GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15);
-
-
+/*
   store_to_eeprom("String-A ",0x0020);
   GPIO_ResetBits(GPIOD, GPIO_Pin_13|GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15);
   read_from_eeprom(myStri, 0x0020);
@@ -145,7 +142,7 @@ int main(void)
            read_from_eeprom(myStri, 0x0060);
            read_from_eeprom(myStri, 0x0080);
            GPIO_ResetBits(GPIOD, GPIO_Pin_13|GPIO_Pin_12|GPIO_Pin_14|GPIO_Pin_15);
-
+*/
   //--------------------------------------------------- RTC jeszcze nie dziala
   
   
