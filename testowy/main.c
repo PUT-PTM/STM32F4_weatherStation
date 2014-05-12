@@ -13,13 +13,9 @@
 #include "stm32f4xx_i2c.h"
 
 #define I2C_TIMEOUT_MAX 0xF00
-#define MEM_DEVICE_WRITE_ADDR 0x48
-#define MEM_DEVICE_READ_ADDR 0
-volatile uint16_t received;
-#define SLAVE_ADDRESS 0x48;
-
-uint16_t combined;
-
+#define MEM_DEVICE_WRITE_ADDR 0x90
+#define MEM_DEVICE_READ_ADDR 0x90
+uint8_t received_data[2];
 
 // KONFIGURACJA I2C - dzia³aj¹ca
 void init_I2C1(void){
@@ -35,7 +31,7 @@ void init_I2C1(void){
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
 
 	/* This sequence sets up the I2C1SDA and I2C1SCL pins so they work correctly with the I2C1 peripheral*/
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_9; // Pin 6(I2C1_SCL) Pin 9(I2C1_SDA)
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; // Pin 6(I2C1_SCL) Pin 7(I2C1_SDA)
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF; // the pins are configured as alternate function so the USART peripheral has access to them
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;// this defines the IO speed and has nothing to do with the baudrate!
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;// this defines the output type as open drain
@@ -54,7 +50,7 @@ void init_I2C1(void){
 
 	/* The I2C1_SCL and I2C1_SDA pins are now connected to their AF so that the I2C1 can take over control of the pins */
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_I2C1);
-	GPIO_PinAFConfig(GPIOB, GPIO_PinSource9, GPIO_AF_I2C1);
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_I2C1);
 
 	 /* Configure I2C1 */
     I2C_DeInit(I2C1);
@@ -65,7 +61,7 @@ void init_I2C1(void){
     /* Set the I2C structure parameters */
     I2C_InitStruct.I2C_Mode = I2C_Mode_I2C;
     I2C_InitStruct.I2C_DutyCycle = I2C_DutyCycle_2;
-    I2C_InitStruct.I2C_OwnAddress1 = 0xEE;  // master
+    I2C_InitStruct.I2C_OwnAddress1 = 0xEE;
     I2C_InitStruct.I2C_Ack = I2C_Ack_Enable;
     I2C_InitStruct.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
     I2C_InitStruct.I2C_ClockSpeed = 400000;
@@ -76,7 +72,7 @@ void init_I2C1(void){
 
 
 
-uint8_t Write(uint8_t Addr, uint8_t Data)   // wysy³anie
+uint8_t Write(uint16_t Addr, uint16_t Data)   // wysy³anie
 {
 	uint32_t timeout = I2C_TIMEOUT_MAX;
 
@@ -209,39 +205,27 @@ void I2C_stop(I2C_TypeDef* I2Cx)
 void tempSensorInit()
 {
 	// wpisywanie konfiguracji do rejestru
-	I2C_GenerateSTART(I2C1, ENABLE);
-	I2C_Send7bitAddress(I2C1, 0x48/*sprawdziæ!*/, I2C_Direction_Transmitter);
+	//I2C_GenerateSTART(I2C1, ENABLE);
+	I2C_Send7bitAddress(I2C1, 0x90/*sprawdziæ!*/, I2C_Direction_Transmitter);
 	I2C_SendData(I2C1,0x01);  // 1- wybranie rejestru konfiguracyjnego
-	I2C_SendData(I2C1,0x60);  // bajt konfiguracyjny
-	I2C_GenerateSTOP(I2C1, ENABLE);
+	//I2C_SendData(I2C1,0x60);  // bajt konfiguracyjny
+	//I2C_GenerateSTOP(I2C1, ENABLE);
 }
 
 int main(void)
 {
 	init_I2C1();
 
-byte b1, b2;
-	//uint8_t received_data[2];
-Write(0x48,0x48);
-
 
 	while(1){
 
-		for(i = 1; i>=0; i++)
-		b1 = Read(0x48);
-		b2 = Read(0x48);
-		combined = b1 << 8 | b2;
+	Write(0x48, 0x00); // write one byte to the slave
 
-
-		 // write one byte to the slave
-
-	//tempSensorInit(); // stop the transmission
-
-		//I2C_start(I2C1, SLAVE_ADDRESS<<1, I2C_Direction_Receiver); // start a transmission in Master receiver mode
-		// read one byte and request another byte
+		received_data[0] = Read(0x90); // read one byte and request another byte
 		}
-
+	I2C_GenerateSTOP(I2C1, ENABLE);
 
 	return 0;
 }
+
 

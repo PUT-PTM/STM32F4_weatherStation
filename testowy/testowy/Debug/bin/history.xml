@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="4.7.4 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=testowy.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\testowy -TC:\CooCox\CoIDE\configuration\ProgramData\testowy/arm-gcc-link.ld -g">
-      <target file="testowy.elf" lastModified="145d15c612b">
+      <target file="testowy.elf" lastModified="145ed4330cc">
          <source file="..\obj\stm32f4xx_syscfg.o" lastModified="145d157ecf1"/>
          <source file="..\obj\stm32f4xx_dac.o" lastModified="145d157ed7d"/>
          <source file="..\obj\startup_stm32f4xx.o" lastModified="145d157edbc"/>
-         <source file="..\obj\main.o" lastModified="145d15c5eda"/>
+         <source file="..\obj\main.o" lastModified="145ed432e6b"/>
          <source file="..\obj\stm32f4xx_rcc.o" lastModified="145d157ef9f"/>
          <source file="..\obj\stm32f4xx_adc.o" lastModified="145d157f099"/>
          <source file="..\obj\stm32f4xx_gpio.o" lastModified="145d157f116"/>
