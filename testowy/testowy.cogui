@@ -14,18 +14,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Kllaudia/Desktop/Dokumenty/Michał/testowy/main.c" title="main.c" tooltip="C:/Users/Kllaudia/Desktop/Dokumenty/Michał/testowy/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Kllaudia/Documents/GitHub/STM32F4_weatherStation/testowy/main.c" title="main.c" tooltip="C:/Users/Kllaudia/Documents/GitHub/STM32F4_weatherStation/testowy/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="15633" selectionTopPixel="6193"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" partName="startup_stm32f4xx.c" path="C:/Users/Kllaudia/Desktop/testowy/cmsis_boot/startup/startup_stm32f4xx.c" title="startup_stm32f4xx.c" tooltip="C:/Users/Kllaudia/Desktop/testowy/cmsis_boot/startup/startup_stm32f4xx.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/cmsis_boot/startup/startup_stm32f4xx.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="14795" selectionTopPixel="4096"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1216" selectionTopPixel="6627"/>
 </editor>
 </editors>
 <views>
@@ -33,9 +28,6 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/testowy"/>
-<element path="/testowy/cmsis"/>
-<element path="/testowy/cmsis_boot"/>
-<element path="/testowy/cmsis_boot/startup"/>
 </expanded>
 <selection>
 <element path="/testowy/main.c"/>
@@ -241,157 +233,9 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/cmsis_boot/startup/startup_stm32f4xx.c"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15510" y="36"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15894" y="11"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15034" y="11"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15070" y="8"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="11439" y="8"/>
-</item>
-<item historyLabel="startup_stm32f4xx.c" index="1">
-<position info="not_deleted" x="14795" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15739" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="993" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1143" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1310" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1399" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1535" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1653" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1744" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1841" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1932" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2059" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2140" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2184" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2229" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2278" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2325" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2484" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2542" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2626" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2688" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2762" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2807" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2860" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2904" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2950" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3026" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3137" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="3174" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15796" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15760" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="7673" y="9"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="8114" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="8976" y="59"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="8789" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="8976" y="59"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="9046" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="9635" y="38"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15897" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15034" y="11"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15074" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="11439" y="8"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15961" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="15739" y="15"/>
-</item>
 <item active="true" historyLabel="main.c" index="0">
-<position info="not_deleted" x="8764" y="90"/>
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -400,6 +244,9 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowy/main.c">
+<persistable path="/testowy/main.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_i2c.c" tooltip="testowy/cmsis_lib/source/stm32f4xx_i2c.c">
 <persistable path="/testowy/cmsis_lib/source/stm32f4xx_i2c.c"/>
 </file>
@@ -442,9 +289,6 @@
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="math.h" tooltip="C:\Users\Kllaudia\Desktop\kolokwium\cmsis_lib\include\math.h">
 <persistable uri="file:/C:/Users/Kllaudia/Desktop/kolokwium/cmsis_lib/include/math.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Projekt_1/cmsis_boot/system_stm32f4xx.c">
-<persistable path="/Projekt_1/cmsis_boot/system_stm32f4xx.c"/>
 </file>
 </mruList>
 </workbench>
