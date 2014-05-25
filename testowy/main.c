@@ -12,9 +12,18 @@
 #include "stm32f4_discovery_lis302dl.h"
 #include "stm32f4xx_i2c.h"
 
-#define I2C_TIMEOUT_MAX 0xF00
+#define I2C_TIMEOUT_MAX 0xF000
+
+
 #define MEM_DEVICE_WRITE_ADDR 0x90
 #define MEM_DEVICE_READ_ADDR 0x90
+#define MEM_RTC_ADDR 0xD0
+
+ uint8_t rejestr=0, numerdnia=0;
+ uint8_t minuty=0, sekundy=0, dzien=0, miesiac=0, rok=0 ;
+ uint8_t godziny=0;
+
+
 uint8_t received_data[2];
 
 // KONFIGURACJA I2C - dzia³aj¹ca
@@ -123,7 +132,6 @@ uint8_t Write(uint16_t Addr, uint16_t Data)   // wysy³anie
      return 0;
 }
 
-
 uint8_t Read(uint16_t Addr/*, uint8_t Mem_Type*/) // odbieranie sygna³u - do uzupe³nienia
 {
 	  uint32_t timeout = I2C_TIMEOUT_MAX;
@@ -196,36 +204,291 @@ uint8_t Read(uint16_t Addr/*, uint8_t Mem_Type*/) // odbieranie sygna³u - do uzu
 
 	  return Data;
 }
-/*
-void I2C_stop(I2C_TypeDef* I2Cx)
-{
-	I2C_GenerateSTOP(I2Cx, ENABLE);
-}
-*/
-void tempSensorInit()
-{
-	// wpisywanie konfiguracji do rejestru
-	//I2C_GenerateSTART(I2C1, ENABLE);
-	I2C_Send7bitAddress(I2C1, 0x90/*sprawdziæ!*/, I2C_Direction_Transmitter);
-	I2C_SendData(I2C1,0x01);  // 1- wybranie rejestru konfiguracyjnego
-	//I2C_SendData(I2C1,0x60);  // bajt konfiguracyjny
-	//I2C_GenerateSTOP(I2C1, ENABLE);
+
+/*-------------------------------------------------------------------------------------------*/
+/*---------------------------------         RTC        --------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+
+void init_I2C2(void){
+
+	GPIO_InitTypeDef GPIO2_InitStruct; // this is for the GPIO pins used as I2C2SDA and I2C2SCL
+
+	I2C_InitTypeDef I2C2_InitStruct; // this is for the I2C2 initilization
+
+	/* enable APB1 peripheral clock for I2C2*/
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C2, ENABLE);
+
+	/* enable the peripheral clock for the pins used by	PB6 for I2C SCL and PB9 for I2C2_SDL*/
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+
+	/* This sequence sets up the I2C2SDA and I2C2SCL pins so they work correctly with the I2C2 peripheral*/
+	GPIO2_InitStruct.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12; // Pin 8(I2C2_SCL) Pin 9(I2C2_SDA)
+	GPIO2_InitStruct.GPIO_Mode = GPIO_Mode_AF; // the pins are configured as alternate function so the USART peripheral has access to them
+	GPIO2_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;// this defines the IO speed and has nothing to do with the baudrate!
+	GPIO2_InitStruct.GPIO_OType = GPIO_OType_OD;// this defines the output type as open drain
+	GPIO2_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;// this activates the pullup resistors on the IO pins
+	GPIO_Init(GPIOB, &GPIO2_InitStruct);// now all the values are passed to the GPIO_Init()
+
+	/* The I2C2_SCL and I2C2_SDA pins are now connected to their AF so that the I2C2 can take over control of the pins */
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource11, GPIO_AF_I2C2);
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource12, GPIO_AF_I2C2);
+
+	 /* Configure I2C2 */
+    I2C_DeInit(I2C2);
+
+    /* Enable the I2C peripheral */
+    I2C_Cmd(I2C2, ENABLE);
+
+    /* Set the I2C structure parameters */
+  I2C2_InitStruct.I2C_Mode = I2C_Mode_I2C;
+    I2C2_InitStruct.I2C_DutyCycle = I2C_DutyCycle_2;
+    I2C2_InitStruct.I2C_OwnAddress1 = 0xEE;
+    I2C2_InitStruct.I2C_Ack = I2C_Ack_Enable;
+    I2C2_InitStruct.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+    I2C2_InitStruct.I2C_ClockSpeed = 400000;
+
+    /* Initialize the I2C peripheral w/ selected parameters */
+    I2C_Init(I2C2,&I2C2_InitStruct);
 }
 
+
+
+
+uint8_t Write_RTC(uint16_t Addr, uint16_t Data)   // wysy³anie
+{
+	uint32_t timeout = I2C_TIMEOUT_MAX;
+
+   /* Generate the Start Condition */
+    I2C_GenerateSTART(I2C2, ENABLE);
+
+   /* Test on I2C2 EV5, Start trnsmitted successfully and clear it */
+    timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+    while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_MODE_SELECT))
+    {
+    	/* If the timeout delay is exeeded, exit with error code */
+    	if ((timeout--) == 0) return 0xFF;
+    }
+
+    /* Send Memory device slave Address for write */
+    I2C_Send7bitAddress(I2C2, MEM_RTC_ADDR, I2C_Direction_Transmitter);
+    /* Test on I2C2 EV6 and clear it */
+    timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+    while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+    {
+    	/* If the timeout delay is exeeded, exit with error code */
+    	if ((timeout--) == 0) return 0xFF;
+	}
+
+    /* Send I2C2 location address LSB */
+    I2C_SendData(I2C2, Addr);
+
+	/* Test on I2C2 EV8 and clear it */
+	timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+	{
+		/* If the timeout delay is exeeded, exit with error code */
+		if ((timeout--) == 0) return 0xFF;
+	}
+    /* Send Data */
+    I2C_SendData(I2C2, Data);
+    /* Test on I2C2 EV8 and clear it */
+	timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+	{
+		/* If the timeout delay is exeeded, exit with error code */
+		if ((timeout--) == 0) return 0xFF;
+	}
+	 /* Send I2C2 STOP Condition */
+	 I2C_GenerateSTOP(I2C2, ENABLE);
+
+     /* If operation is OK, return 0 */
+     return 0;
+}
+
+
+uint8_t Read_RTC(uint16_t Addr)
+{
+	  uint32_t timeout = I2C_TIMEOUT_MAX;
+	  uint8_t Data = 0;
+
+	  /* Generate the Start Condition */
+	  I2C_GenerateSTART(I2C2, ENABLE);
+
+	  /* Test on I2C2 EV5 and clear it */
+	  timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	  while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_MODE_SELECT))
+	  {
+	    /* If the timeout delay is exceeded, exit with error code */
+			if ((timeout--) == 0) return 0xFF;
+	  }
+
+	  I2C_Send7bitAddress(I2C2, MEM_RTC_ADDR, I2C_Direction_Transmitter);
+
+	  /* Test on I2C2 EV6 and clear it */
+	  timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	  while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+	  {
+	    /* If the timeout delay is exeeded, exit with error code */
+			if ((timeout--) == 0) return 0xFF;
+	  }
+
+	  /* Send I2C2 location address LSB */
+	  I2C_SendData(I2C2,Addr);
+
+			/* Test on I2C2 EV8 and clear it */
+	  timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	  while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+	  {
+		  /* If the timeout delay is exeeded, exit with error code */
+		  if ((timeout--) == 0) return 0xFF;
+	  }
+
+	  I2C_GenerateSTART(I2C2, ENABLE);
+
+	  /* Test on I2C2 EV6 and clear it */
+	  timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	  while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_MODE_SELECT))
+	  {
+		  /* If the timeout delay is exeeded, exit with error code */
+		  if ((timeout--) == 0) return 0xFF;
+	  }
+
+	  I2C_Send7bitAddress(I2C2, MEM_RTC_ADDR, I2C_Direction_Receiver);
+
+	  /* Test on I2C2 EV6 and clear it */
+	  timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	  while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
+	  {
+		  /* If the timeout delay is exeeded, exit with error code */
+		  if ((timeout--) == 0) return 0xFF;
+	  }
+
+	  /* Prepare an NACK for the next data received */
+	  I2C_AcknowledgeConfig(I2C2, DISABLE);
+
+	  /* Test on I2C2 EV7 and clear it */
+	  timeout = I2C_TIMEOUT_MAX; /* Initialize timeout value */
+	  while(!I2C_CheckEvent(I2C2, I2C_EVENT_MASTER_BYTE_RECEIVED))
+	  {
+		  /* If the timeout delay is exeeded, exit with error code */
+	      if ((timeout--) == 0) return 0xFF;
+	  }
+	  I2C_GenerateSTOP(I2C2, ENABLE);  //
+	  Data = I2C_ReceiveData(I2C2);
+
+	  return Data;
+}
+
+/**************************************************************/
+
+
+enum rtc_regs
+{
+    RTC_SEC_REG,
+    RTC_MIN_REG,
+    RTC_HOUR_CENTURY_REG,
+    RTC_DAY_REG,
+    RTC_DATE_REG,
+    RTC_MONTH_REG,
+    RTC_YEAR_REG,
+    RTC_CONTROL_REG,
+    RTC_REGS_SIZE	//Last item
+};
+
+#define RTC_HOUR_MASK 0x3f
+#define RTC_MIN_MASK 0x7f
+#define RTC_SEC_MASK 0x7F
+#define RTC_DATE_MASK 0x3f
+#define RTC_MONTH_MASK 0x1f
+#define RTC_DAY_MASK 0x07
+
+uint8_t buf[RTC_REGS_SIZE];
+//Print rtc date
+static void date(const uint8_t *rtc)
+{
+
+
+         godziny =  (rtc[RTC_HOUR_CENTURY_REG] & RTC_HOUR_MASK);
+         minuty =  rtc[RTC_MIN_REG]& RTC_MIN_MASK;
+        sekundy =   rtc[RTC_SEC_REG] & RTC_SEC_MASK;
+
+
+    numerdnia = rtc[RTC_DAY_REG]&RTC_DAY_MASK;
+	dzien = rtc[RTC_DATE_REG] & RTC_DATE_MASK;
+	miesiac = rtc[RTC_MONTH_REG] & RTC_MONTH_MASK;
+	rok = rtc[RTC_YEAR_REG];
+	rejestr = rtc[RTC_CONTROL_REG];
+}
+
+void ReadDate()
+{
+	buf[RTC_SEC_REG]=Read(0x00);
+	 buf[RTC_HOUR_CENTURY_REG]=Read(0x02);
+	  buf[RTC_MIN_REG]=Read(0x01);
+	   buf[RTC_DAY_REG]=Read(0x03);
+		buf[RTC_DATE_REG]= Read(0x04);
+		buf[RTC_MONTH_REG]=Read(0x05);
+		buf[RTC_YEAR_REG]=Read(0x06);
+		buf[RTC_CONTROL_REG]=Read(0x07);
+
+}
+void ReadRTCDate()
+{
+	buf[RTC_SEC_REG]=Read_RTC(0x00);
+	 buf[RTC_HOUR_CENTURY_REG]=Read_RTC(0x02);
+	  buf[RTC_MIN_REG]=Read_RTC(0x01);
+	   buf[RTC_DAY_REG]=Read_RTC(0x03);
+		buf[RTC_DATE_REG]= Read_RTC(0x04);
+		buf[RTC_MONTH_REG]=Read_RTC(0x05);
+		buf[RTC_YEAR_REG]=Read_RTC(0x06);
+		buf[RTC_CONTROL_REG]=Read_RTC(0x07);
+
+}
+
+void WriteDate(uint8_t* buf)
+{
+
+	uint8_t i=0x00;
+	for(i;i<(uint8_t)sizeof(buf)+1;i++)
+	{
+		Write(i,buf[i]);
+
+	}
+}
 int main(void)
 {
+	static const uint8_t pgm_regs[] =
+	      {
+
+	          	0x01,       //Sec
+	          	0x17,		//Min
+	  		0x12,		//Hour
+	  		0x2,		//Day num
+	  		0x13,		//day
+	  		0x05,		//Month
+	  		0x14,		//Year
+	  		0x3f
+	      };
 	init_I2C1();
+	init_I2C2();
+//	WriteDate(pgm_regs);
 
+	int x=100000;
+	while(x--);
 
+	//	Write(0x06,0x14);
+//	Write_RTC(0x00, 0x00);
 	while(1){
 
-	Write(0x48, 0x00); // write one byte to the slave
+		ReadRTCDate();
+		date(buf);
+	 // write one byte to the slave
 
-		received_data[0] = Read(0x90); // read one byte and request another byte
+		received_data[0] = Read(0x00);
+		//received_data[0] = Read_RTC(0x00); // read one byte and request another byte
 		}
-	I2C_GenerateSTOP(I2C1, ENABLE);
 
-	return 0;
+
 }
 
 

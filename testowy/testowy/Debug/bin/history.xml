@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="4.7.4 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=testowy.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\testowy -TC:\CooCox\CoIDE\configuration\ProgramData\testowy/arm-gcc-link.ld -g">
-      <target file="testowy.elf" lastModified="145ed4330cc">
-         <source file="..\obj\stm32f4xx_syscfg.o" lastModified="145d157ecf1"/>
-         <source file="..\obj\stm32f4xx_dac.o" lastModified="145d157ed7d"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="145d157edbc"/>
-         <source file="..\obj\main.o" lastModified="145ed432e6b"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="145d157ef9f"/>
-         <source file="..\obj\stm32f4xx_adc.o" lastModified="145d157f099"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="145d157f116"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="145d157f173"/>
-         <source file="..\obj\stm32f4xx_dma.o" lastModified="145d157f20f"/>
-         <source file="..\obj\stm32f4xx_spi.o" lastModified="145d157f2da"/>
-         <source file="..\obj\stm32f4xx_i2c.o" lastModified="145d157f395"/>
-         <source file="..\obj\stm32f4xx_exti.o" lastModified="145d157f3f3"/>
-         <source file="..\obj\misc.o" lastModified="145d157f460"/>
-         <source file="..\obj\stm32f4_discovery_lis302dl.o" lastModified="145d157f4dd"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="145d157f5d6"/>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=testowy.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\testowy -TC:\CooCox\CoIDE\configuration\ProgramData\testowy/arm-gcc-link.ld -g">
+      <target file="testowy.elf" lastModified="145f5a134dd">
+         <source file="..\obj\stm32f4xx_syscfg.o" lastModified="145f53e9956"/>
+         <source file="..\obj\stm32f4xx_dac.o" lastModified="145f53e99dd"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="145f53e9a23"/>
+         <source file="..\obj\main.o" lastModified="145f5a13276"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="145f53e9c06"/>
+         <source file="..\obj\stm32f4xx_adc.o" lastModified="145f53e9c92"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="145f53e9cf4"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="145f53e9d48"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="145f53e9db3"/>
+         <source file="..\obj\stm32f4xx_spi.o" lastModified="145f53e9e28"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="145f53e9ea8"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="145f53e9f00"/>
+         <source file="..\obj\misc.o" lastModified="145f53e9f54"/>
+         <source file="..\obj\stm32f4_discovery_lis302dl.o" lastModified="145f53e9fe1"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="145f53ea0db"/>
       </target>
    </processor>
 </history>
