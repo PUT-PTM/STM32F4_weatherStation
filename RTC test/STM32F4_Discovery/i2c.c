@@ -221,7 +221,7 @@ int I2C_CheckDevice(u08 addr)
   timeout = I2C_TIMEOUT;
   while(!I2C_CheckEvent(Open_I2C, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
   {
-    if((timeout--)==0)   // wait while sending slave address for read
+    if((timeout--)==0)   // wait while sending slave address for read        ->>>> B£¥D
     {
       I2C_GenerateSTOP(Open_I2C, ENABLE);
       return ERROR;

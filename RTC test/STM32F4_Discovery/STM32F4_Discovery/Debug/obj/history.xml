@@ -1,41 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -Os -c -DSTM32F407VG -DSTM32F4XX -D__FPU_USED -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\Kllaudia\Desktop -I..\..\..\..\..\Users\Kllaudia\Desktop\STM32F4_Discovery -I..\..\..\..\..\Users\Kllaudia\Desktop\STM32F4_Discovery\cmsis -I..\..\..\..\..\Users\Kllaudia\Desktop\STM32F4_Discovery\cmsis_lib -I..\..\..\..\..\Users\Kllaudia -I..\..\..\..\..\Users\Kllaudia\Desktop\STM32F4_Discovery\cmsis_lib\include -I..\..\..\..\..\Users\Kllaudia\Desktop\STM32F4_Discovery\cmsis_boot">
-      <target file="syscalls.o" lastModified="145aa47314a">
-         <source file="..\..\..\syscalls\syscalls.c" lastModified="13af3e24fd0"/>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -Os -c -DSTM32F407VG -DSTM32F4XX -D__FPU_USED -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation\RTC test\STM32F4_Discovery\cmsis_boot -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation\RTC test\STM32F4_Discovery -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation\RTC test -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation\RTC test\STM32F4_Discovery\cmsis_lib\include -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation\RTC test\STM32F4_Discovery\cmsis_lib -I..\..\..\..\..\Users\Monika\Documents\GitHub\STM32F4_weatherStation\RTC test\STM32F4_Discovery\cmsis">
+      <target file="stm32f4xx_rcc.o" lastModified="145ad1c3099">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145ad11a71e"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="145aa47306b">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="13a62ced0e0"/>
+      <target file="system_stm32f4xx.o" lastModified="145ad1c32c7">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145ad11a713"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="145aa4730d1">
-         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="13a72cecb30"/>
+      <target file="misc.o" lastModified="145ad1c34ab">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="145ad11a71a"/>
       </target>
-      <target file="printf.o" lastModified="145a8b87fa7">
-         <source file="..\..\..\stdio\printf.c" lastModified="13b1e11eef0"/>
+      <target file="stm32f4xx_gpio.o" lastModified="145ad1c31d5">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="145ad11a71b"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="145aa473241">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="13af98f6030"/>
+      <target file="stm32f4xx_i2c.o" lastModified="145ad1c3400">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="145ad11a71c"/>
       </target>
-      <target file="i2c.o" lastModified="145aa472d48">
-         <source file="..\..\..\i2c.c" lastModified="145aa46c7db"/>
+      <target file="main.o" lastModified="145ad74b6a7">
+         <source file="..\..\..\main.c" lastModified="145ad74aeb2"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="145a8b87b5a">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="13af3f756a0"/>
+      <target file="i2c.o" lastModified="145ad762bf7">
+         <source file="..\..\..\i2c.c" lastModified="145ad7626df"/>
       </target>
-      <target file="stm32f4xx_usart.o" lastModified="145a8b87b09">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="13a6dff8fe0"/>
-      </target>
-      <target file="main.o" lastModified="145aa472e9b">
-         <source file="..\..\..\main.c" lastModified="145aa443a4c"/>
-      </target>
-      <target file="usart.o" lastModified="145a8b88567">
-         <source file="..\..\..\usart.c" lastModified="13b1ea5e9c0"/>
-      </target>
-      <target file="stm32f4xx_rcc.o" lastModified="145aa472f98">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="13a62ced0e0"/>
-      </target>
-      <target file="misc.o" lastModified="145aa47330e">
-         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="13adeebdb50"/>
+      <target file="startup_stm32f4xx.o" lastModified="145ad1c2c87">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145ad11a708"/>
       </target>
    </processor>
 </history>
