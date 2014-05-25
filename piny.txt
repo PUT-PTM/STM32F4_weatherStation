@@ -1,0 +1,14 @@
+LCD
+5V 5V
+GND GND
+PD1 - bit danych 4
+PD3 - bit danych 5
+PD5 - bit danych 6
+PD7 - bit danych 7
+PD0 - bit reset
+PD2 - bit read/write
+PD4 - bit enable
+
+TEMP
+
+RTC

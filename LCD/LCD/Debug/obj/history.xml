@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_lib -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\LCD -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_lib\include -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD -IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_boot">
+      <target file="stm32f4xx_rcc.o" lastModified="145f545d2ae">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145f54040f9"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="145f545d46b">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145f5403335"/>
+      </target>
+      <target file="stm32f4xx_gpio.o" lastModified="145f545d3e0">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="145f54040c3"/>
+      </target>
+      <target file="lcd_hd44780.o" lastModified="145f545d346">
+         <source file="..\..\lcd_hd44780.c" lastModified="145f54506f6"/>
+      </target>
+      <target file="main.o" lastModified="145f545d1fa">
+         <source file="..\..\..\main.c" lastModified="145f54514cd"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="145f545d032">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145f54032fd"/>
+      </target>
+   </processor>
+</history>
