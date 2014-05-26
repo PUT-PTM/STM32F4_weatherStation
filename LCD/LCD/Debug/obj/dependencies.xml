@@ -1,56 +1,115 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
    <includePath signature="/IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_lib /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\LCD /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_lib\include /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_boot">
-      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="145f54040be">
+      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="145f5403508">
+      </source>
+      <source file="..\..\..\cmsis\core_cm4.h" lastModified="145f5403508">
+         <include file="..\..\..\cmsis\core_cmInstr.h"/>
+         <include file="..\..\..\cmsis\core_cmFunc.h"/>
+         <include file="..\..\..\cmsis\core_cm4_simd.h"/>
+      </source>
+      <source file="..\..\lcd_hd44780.h" lastModified="1463a73b2cf">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+      </source>
+      <source file="..\..\lcd_hd44780.c" lastModified="1463a707089">
+         <include file="..\..\lcd_hd44780.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="145f5403120">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145f5403120">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="145f540374a">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="1463a4bdddc">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="145f540374f">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="145f5403cd8">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="1463a4f8b65">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="145f5408328">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="145f5403508">
+         <include file="..\..\..\cmsis\core_cm4.h"/>
+         <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
+         <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="1463a4bdd79">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="1463a4f8b6b">
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\lcd_common.h" lastModified="1463a60c18f">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="145f5403508">
+      </source>
+      <source file="..\..\..\main.c" lastModified="1463a60cf5f">
+         <include file="..\..\lcd_common.h"/>
+         <include file="..\..\lcd_hd44780.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145f54040f9">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\lcd_common.c" lastModified="1463a60baa5">
+         <include file="..\..\lcd_common.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145f54032fd">
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="145f54040c3">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145f54032fd">
-      </source>
-      <source file="..\..\..\main.c" lastModified="145f54514cd">
-         <include file="..\..\lcd_hd44780.h"/>
-      </source>
-      <source file="..\..\lcd_hd44780.h" lastModified="145f5459854">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-      </source>
-      <source file="..\..\..\cmsis\core_cm4.h" lastModified="145f540373f">
-         <include file="..\..\..\cmsis\core_cmInstr.h"/>
-         <include file="..\..\..\cmsis\core_cmFunc.h"/>
-         <include file="..\..\..\cmsis\core_cm4_simd.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="145f540333a">
+      <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="145f5403508">
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="145f54040f4">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\lcd_hd44780.c" lastModified="145f54506f6">
-         <include file="..\..\lcd_hd44780.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+   </includePath>
+   <includePath signature="/IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\LCD /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_lib /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_lib\include /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD /IC:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\LCD\cmsis_boot">
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="145f5403120">
       </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145f5403335">
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145f5403120">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="145f5403744">
-      </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145f54040f9">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="1463a4bdddc">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="145f5408ce2">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="145f5403cd8">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="1463a4f8b65">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="1463a4bdd79">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="1463a4f8b6b">
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145f54040c0">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145f5403120">
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="145f54040c0">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="145f54036ed">
-         <include file="..\..\..\cmsis\core_cm4.h"/>
-         <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
-         <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="145f54040c0">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
    </includePath>
 </dependencies>

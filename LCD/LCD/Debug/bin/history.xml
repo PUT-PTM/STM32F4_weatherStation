@@ -1,13 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="4.8.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=LCD.map -O0 --gc-sections -LF:\CooCox\CoIDE\configuration\ProgramData\LCD -TF:\CooCox\CoIDE\configuration\ProgramData\LCD/arm-gcc-link.ld -g">
-      <target file="LCD.elf" lastModified="145f545d723">
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="145f545d032"/>
-         <source file="..\obj\main.o" lastModified="145f545d1fa"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="145f545d2ae"/>
-         <source file="..\obj\lcd_hd44780.o" lastModified="145f545d346"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="145f545d3e0"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="145f545d46b"/>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=LCD.map -O0 --gc-sections -LG:\CooCox\CoIDE\configuration\ProgramData\LCD -TG:\CooCox\CoIDE\configuration\ProgramData\LCD/arm-gcc-link.ld -g">
+      <target file="LCD.elf" lastModified="1463a73e4f0">
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="1463a60d447"/>
+         <source file="..\obj\main.o" lastModified="1463a73e201"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="1463a60d510"/>
+         <source file="..\obj\lcd_hd44780.o" lastModified="1463a73e2a6"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="1463a60d5f1"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="1463a60d642"/>
+         <source file="..\obj\lcd_common.o" lastModified="1463a60d6a5"/>
+         <source file="..\obj\misc.o" lastModified="1463a60d751"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="1463a60d875"/>
       </target>
    </processor>
 </history>
