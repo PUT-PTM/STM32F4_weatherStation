@@ -12,7 +12,6 @@
 //****************************************************************************//
 #include "stm32f4xx_gpio.h"
 
-
 #define LCD_GPIO GPIOD
 #define LCD_CLK_LINE RCC_AHB1Periph_GPIOD
 
@@ -64,17 +63,14 @@
 #define HD44780_DDRAM_SET 0x80
 
 //##############################################################
-void lcd_init(void);
-void lcd_cls(void);
-void lcd_str(unsigned char * text);
-void lcd_strxy(unsigned char * text, unsigned char x, unsigned char y);
-void lcd_locate(unsigned char x, unsigned char y);
-void lcd_int(int n);
-void lcd_intxy(int n, unsigned char x, unsigned char y);
-
-//###############################################################
-
-void lcd_writedata(unsigned char dataToWrite);
-void lcd_writecommand(unsigned char commandToWrite);
-void lcd_writebinary(unsigned int var, unsigned char bitCount);
-void lcd_addchar (unsigned char chrNum, unsigned char n, const unsigned char *p);
+void lcd_init( void );
+void lcd_cls( void );
+void lcd_str( unsigned char * text );
+void lcd_locate( unsigned char x, unsigned char y );
+void lcd_int( int n );
+void lcd_intxy( int n, unsigned char x, unsigned char y );
+void lcd_writedata( unsigned char dataToWrite );
+void lcd_writecommand( unsigned char commandToWrite );
+//void lcd_strxy(unsigned char * text, unsigned char x, unsigned char y);
+//void lcd_writebinary(unsigned int var, unsigned char bitCount);
+//void lcd_addchar (unsigned char chrNum, unsigned char n, const unsigned char *p);

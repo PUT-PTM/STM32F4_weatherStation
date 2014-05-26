@@ -107,16 +107,6 @@ Discarded input sections
  .data          0x00000000        0x0 ..\obj\lcd_hd44780.o
  .bss           0x00000000        0x0 ..\obj\lcd_hd44780.o
  .text.lcd_str  0x00000000       0x2c ..\obj\lcd_hd44780.o
- .text.lcd_strxy
-                0x00000000       0x40 ..\obj\lcd_hd44780.o
- .text.lcd_writebinary
-                0x00000000       0x58 ..\obj\lcd_hd44780.o
- .text.LCD_ShiftLeft
-                0x00000000       0x10 ..\obj\lcd_hd44780.o
- .text.LCD_ShiftRight
-                0x00000000       0x10 ..\obj\lcd_hd44780.o
- .text.lcd_addchar
-                0x00000000       0x58 ..\obj\lcd_hd44780.o
  .text          0x00000000        0x0 ..\obj\stm32f4xx_gpio.o
  .data          0x00000000        0x0 ..\obj\stm32f4xx_gpio.o
  .bss           0x00000000        0x0 ..\obj\stm32f4xx_gpio.o
@@ -497,11 +487,11 @@ Linker script and memory map
  .text.lcd_locate
                 0x080005e8       0x34 ..\obj\lcd_hd44780.o
                 0x080005e8                lcd_locate
+ .text.lcd_cls  0x0800061c       0x10 ..\obj\lcd_hd44780.o
+                0x0800061c                lcd_cls
  .text.lcd_init
-                0x0800061c      0x11c ..\obj\lcd_hd44780.o
-                0x0800061c                lcd_init
- .text.lcd_cls  0x08000738       0x10 ..\obj\lcd_hd44780.o
-                0x08000738                lcd_cls
+                0x0800062c      0x11c ..\obj\lcd_hd44780.o
+                0x0800062c                lcd_init
  .text.GPIO_Init
                 0x08000748      0x144 ..\obj\stm32f4xx_gpio.o
                 0x08000748                GPIO_Init
@@ -616,15 +606,15 @@ LOAD g:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(LCD.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x45b8
+.debug_info     0x00000000     0x44bc
  .debug_info    0x00000000      0x103 ..\obj\startup_stm32f4xx.o
  .debug_info    0x00000103       0xab ..\obj\main.o
  .debug_info    0x000001ae      0xd49 ..\obj\stm32f4xx_rcc.o
- .debug_info    0x00000ef7      0x5b9 ..\obj\lcd_hd44780.o
- .debug_info    0x000014b0      0x640 ..\obj\stm32f4xx_gpio.o
- .debug_info    0x00001af0      0x6b9 ..\obj\lcd_common.o
- .debug_info    0x000021a9      0x592 ..\obj\misc.o
- .debug_info    0x0000273b     0x1e7d ..\obj\stm32f4xx_tim.o
+ .debug_info    0x00000ef7      0x4bd ..\obj\lcd_hd44780.o
+ .debug_info    0x000013b4      0x640 ..\obj\stm32f4xx_gpio.o
+ .debug_info    0x000019f4      0x6b9 ..\obj\lcd_common.o
+ .debug_info    0x000020ad      0x592 ..\obj\misc.o
+ .debug_info    0x0000263f     0x1e7d ..\obj\stm32f4xx_tim.o
 
 .debug_abbrev   0x00000000      0xa5c
  .debug_abbrev  0x00000000       0xb2 ..\obj\startup_stm32f4xx.o
@@ -636,17 +626,17 @@ OUTPUT(LCD.elf elf32-littlearm)
  .debug_abbrev  0x000007aa      0x129 ..\obj\misc.o
  .debug_abbrev  0x000008d3      0x189 ..\obj\stm32f4xx_tim.o
 
-.debug_loc      0x00000000     0x2614
+.debug_loc      0x00000000     0x2514
  .debug_loc     0x00000000       0x64 ..\obj\startup_stm32f4xx.o
  .debug_loc     0x00000064       0x2c ..\obj\main.o
  .debug_loc     0x00000090      0x97c ..\obj\stm32f4xx_rcc.o
- .debug_loc     0x00000a0c      0x324 ..\obj\lcd_hd44780.o
- .debug_loc     0x00000d30      0x310 ..\obj\stm32f4xx_gpio.o
- .debug_loc     0x00001040       0x9c ..\obj\lcd_common.o
- .debug_loc     0x000010dc      0x118 ..\obj\misc.o
- .debug_loc     0x000011f4     0x1420 ..\obj\stm32f4xx_tim.o
+ .debug_loc     0x00000a0c      0x224 ..\obj\lcd_hd44780.o
+ .debug_loc     0x00000c30      0x310 ..\obj\stm32f4xx_gpio.o
+ .debug_loc     0x00000f40       0x9c ..\obj\lcd_common.o
+ .debug_loc     0x00000fdc      0x118 ..\obj\misc.o
+ .debug_loc     0x000010f4     0x1420 ..\obj\stm32f4xx_tim.o
 
-.debug_aranges  0x00000000      0x640
+.debug_aranges  0x00000000      0x618
  .debug_aranges
                 0x00000000       0x28 ..\obj\startup_stm32f4xx.o
  .debug_aranges
@@ -654,52 +644,52 @@ OUTPUT(LCD.elf elf32-littlearm)
  .debug_aranges
                 0x00000048      0x178 ..\obj\stm32f4xx_rcc.o
  .debug_aranges
-                0x000001c0       0x90 ..\obj\lcd_hd44780.o
+                0x000001c0       0x68 ..\obj\lcd_hd44780.o
  .debug_aranges
-                0x00000250       0x88 ..\obj\stm32f4xx_gpio.o
+                0x00000228       0x88 ..\obj\stm32f4xx_gpio.o
  .debug_aranges
-                0x000002d8       0x30 ..\obj\lcd_common.o
+                0x000002b0       0x30 ..\obj\lcd_common.o
  .debug_aranges
-                0x00000308       0x40 ..\obj\misc.o
+                0x000002e0       0x40 ..\obj\misc.o
  .debug_aranges
-                0x00000348      0x2f8 ..\obj\stm32f4xx_tim.o
+                0x00000320      0x2f8 ..\obj\stm32f4xx_tim.o
 
-.debug_ranges   0x00000000      0x5c0
+.debug_ranges   0x00000000      0x598
  .debug_ranges  0x00000000       0x18 ..\obj\startup_stm32f4xx.o
  .debug_ranges  0x00000018       0x10 ..\obj\main.o
  .debug_ranges  0x00000028      0x168 ..\obj\stm32f4xx_rcc.o
- .debug_ranges  0x00000190       0x80 ..\obj\lcd_hd44780.o
- .debug_ranges  0x00000210       0x78 ..\obj\stm32f4xx_gpio.o
- .debug_ranges  0x00000288       0x20 ..\obj\lcd_common.o
- .debug_ranges  0x000002a8       0x30 ..\obj\misc.o
- .debug_ranges  0x000002d8      0x2e8 ..\obj\stm32f4xx_tim.o
+ .debug_ranges  0x00000190       0x58 ..\obj\lcd_hd44780.o
+ .debug_ranges  0x000001e8       0x78 ..\obj\stm32f4xx_gpio.o
+ .debug_ranges  0x00000260       0x20 ..\obj\lcd_common.o
+ .debug_ranges  0x00000280       0x30 ..\obj\misc.o
+ .debug_ranges  0x000002b0      0x2e8 ..\obj\stm32f4xx_tim.o
 
-.debug_line     0x00000000     0x2149
+.debug_line     0x00000000     0x20bd
  .debug_line    0x00000000       0xd1 ..\obj\startup_stm32f4xx.o
  .debug_line    0x000000d1      0x189 ..\obj\main.o
  .debug_line    0x0000025a      0x62e ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00000888      0x431 ..\obj\lcd_hd44780.o
- .debug_line    0x00000cb9      0x3d2 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x0000108b      0x2da ..\obj\lcd_common.o
- .debug_line    0x00001365      0x2d8 ..\obj\misc.o
- .debug_line    0x0000163d      0xb0c ..\obj\stm32f4xx_tim.o
+ .debug_line    0x00000888      0x3a5 ..\obj\lcd_hd44780.o
+ .debug_line    0x00000c2d      0x3d2 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x00000fff      0x2da ..\obj\lcd_common.o
+ .debug_line    0x000012d9      0x2d8 ..\obj\misc.o
+ .debug_line    0x000015b1      0xb0c ..\obj\stm32f4xx_tim.o
 
-.debug_str      0x00000000     0x221a
+.debug_str      0x00000000     0x21c7
  .debug_str     0x00000000      0x132 ..\obj\startup_stm32f4xx.o
                                 0x144 (size before relaxing)
  .debug_str     0x00000132       0xc1 ..\obj\main.o
                                 0x14f (size before relaxing)
  .debug_str     0x000001f3      0x6fe ..\obj\stm32f4xx_rcc.o
                                 0x823 (size before relaxing)
- .debug_str     0x000008f1      0x39c ..\obj\lcd_hd44780.o
-                                0x4bd (size before relaxing)
- .debug_str     0x00000c8d      0x1b7 ..\obj\stm32f4xx_gpio.o
+ .debug_str     0x000008f1      0x349 ..\obj\lcd_hd44780.o
+                                0x46a (size before relaxing)
+ .debug_str     0x00000c3a      0x1b7 ..\obj\stm32f4xx_gpio.o
                                 0x476 (size before relaxing)
- .debug_str     0x00000e44      0x73b ..\obj\lcd_common.o
+ .debug_str     0x00000df1      0x73b ..\obj\lcd_common.o
                                 0x8d0 (size before relaxing)
- .debug_str     0x0000157f      0x1e5 ..\obj\misc.o
+ .debug_str     0x0000152c      0x1e5 ..\obj\misc.o
                                 0x3ac (size before relaxing)
- .debug_str     0x00001764      0xab6 ..\obj\stm32f4xx_tim.o
+ .debug_str     0x00001711      0xab6 ..\obj\stm32f4xx_tim.o
                                 0xda3 (size before relaxing)
 
 .comment        0x00000000       0x70
@@ -734,13 +724,13 @@ OUTPUT(LCD.elf elf32-littlearm)
  .ARM.attributes
                 0x00000198       0x2e g:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strlen.o)
 
-.debug_frame    0x00000000     0x1430
+.debug_frame    0x00000000     0x1398
  .debug_frame   0x00000000       0x48 ..\obj\startup_stm32f4xx.o
  .debug_frame   0x00000048       0x2c ..\obj\main.o
  .debug_frame   0x00000074      0x4d8 ..\obj\stm32f4xx_rcc.o
- .debug_frame   0x0000054c      0x1e4 ..\obj\lcd_hd44780.o
- .debug_frame   0x00000730      0x19c ..\obj\stm32f4xx_gpio.o
- .debug_frame   0x000008cc       0x6c ..\obj\lcd_common.o
- .debug_frame   0x00000938       0x9c ..\obj\misc.o
- .debug_frame   0x000009d4      0xa3c ..\obj\stm32f4xx_tim.o
- .debug_frame   0x00001410       0x20 g:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strlen.o)
+ .debug_frame   0x0000054c      0x14c ..\obj\lcd_hd44780.o
+ .debug_frame   0x00000698      0x19c ..\obj\stm32f4xx_gpio.o
+ .debug_frame   0x00000834       0x6c ..\obj\lcd_common.o
+ .debug_frame   0x000008a0       0x9c ..\obj\misc.o
+ .debug_frame   0x0000093c      0xa3c ..\obj\stm32f4xx_tim.o
+ .debug_frame   0x00001378       0x20 g:/program files (x86)/gnu tools arm embedded/4.7 2013q3/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/armv7e-m\libg.a(lib_a-strlen.o)
