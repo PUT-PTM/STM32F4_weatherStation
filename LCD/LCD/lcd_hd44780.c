@@ -85,6 +85,15 @@ while(*text)
 lcd_writedata(*text++);
 }
 
+void lcd_str_center(unsigned char y, unsigned char * text)
+{
+	unsigned int length = strlen(text);
+	unsigned int position = 16/2 - length/2;
+	lcd_locate(position, y);
+
+	while(*text)
+		lcd_writedata(*text++);
+}
 
 //-----------------------------------------------------------------------------
 void lcd_locate(unsigned char x, unsigned char y)
