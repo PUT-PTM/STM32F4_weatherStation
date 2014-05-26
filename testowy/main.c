@@ -11,6 +11,8 @@
 #include "stm32f4xx_spi.h"
 #include "stm32f4_discovery_lis302dl.h"
 #include "stm32f4xx_i2c.h"
+#include "lcd_hd44780.h"
+
 
 #define I2C_TIMEOUT_MAX 0xF000
 
@@ -424,6 +426,7 @@ int main(void)
 	  		0x14,		//Year
 	  		0x3f
 	      };
+	lcd_init();
 	init_I2C1();
 	WriteDate(pgm_regs);
 
@@ -440,6 +443,12 @@ int main(void)
 		int y=100000;
 		while(y--);
 		temp = Read(0x00);
+
+
+
+
+			lcd_locate(1,0);
+			lcd_str("Hello World!");
 		}
 
 
