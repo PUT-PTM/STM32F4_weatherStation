@@ -12,7 +12,6 @@ C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStat
 C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\obj\Debug\StacjaMeteo.pdb
 C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\bin\Debug\StacjaMeteo.exe
 C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\bin\Debug\StacjaMeteo.pdb
-C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\obj\Debug\StacjaMeteo.csprojResolveAssemblyReference.cache
 C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\obj\Debug\StacjaMeteo.Form1.resources
 C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\obj\Debug\StacjaMeteo.Properties.Resources.resources
 C:\Users\Mateusz\Dropbox\Politechnika\semestr IV\PMT #2\repo\STM32F4_weatherStation\StacjaMeteoAplikacja\StacjaMeteo\obj\Debug\StacjaMeteo.csproj.GenerateResource.Cache

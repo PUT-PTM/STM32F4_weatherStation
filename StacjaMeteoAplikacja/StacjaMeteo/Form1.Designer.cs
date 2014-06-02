@@ -39,13 +39,17 @@
             this.lblBaudRate = new System.Windows.Forms.Label();
             this.lblDataBits = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.buttonDownload = new System.Windows.Forms.Button();
             this.gbPortSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbPortSettings
             // 
             this.gbPortSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gbPortSettings.Controls.Add(this.buttonDownload);
             this.gbPortSettings.Controls.Add(this.cmbPortName);
+            this.gbPortSettings.Controls.Add(this.buttonConnect);
             this.gbPortSettings.Controls.Add(this.cmbBaudRate);
             this.gbPortSettings.Controls.Add(this.cmbStopBits);
             this.gbPortSettings.Controls.Add(this.cmbParity);
@@ -55,12 +59,12 @@
             this.gbPortSettings.Controls.Add(this.lblBaudRate);
             this.gbPortSettings.Controls.Add(this.lblDataBits);
             this.gbPortSettings.Controls.Add(this.label1);
-            this.gbPortSettings.Location = new System.Drawing.Point(13, 397);
+            this.gbPortSettings.Location = new System.Drawing.Point(13, 436);
             this.gbPortSettings.Name = "gbPortSettings";
-            this.gbPortSettings.Size = new System.Drawing.Size(370, 64);
+            this.gbPortSettings.Size = new System.Drawing.Size(528, 64);
             this.gbPortSettings.TabIndex = 5;
             this.gbPortSettings.TabStop = false;
-            this.gbPortSettings.Text = "COM Serial Port Settings";
+            this.gbPortSettings.Text = "Ustawienia portu COM";
             // 
             // cmbPortName
             // 
@@ -178,6 +182,27 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Parity:";
             // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Location = new System.Drawing.Point(364, 11);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(75, 45);
+            this.buttonConnect.TabIndex = 6;
+            this.buttonConnect.Text = "Połącz";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            // 
+            // buttonDownload
+            // 
+            this.buttonDownload.Enabled = false;
+            this.buttonDownload.Location = new System.Drawing.Point(445, 11);
+            this.buttonDownload.Name = "buttonDownload";
+            this.buttonDownload.Size = new System.Drawing.Size(75, 45);
+            this.buttonDownload.TabIndex = 7;
+            this.buttonDownload.Text = "Pobierz";
+            this.buttonDownload.UseVisualStyleBackColor = true;
+            this.buttonDownload.Click += new System.EventHandler(this.buttonDownload_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +233,8 @@
         private System.Windows.Forms.Label lblBaudRate;
         private System.Windows.Forms.Label lblDataBits;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Button buttonDownload;
 
 
 
