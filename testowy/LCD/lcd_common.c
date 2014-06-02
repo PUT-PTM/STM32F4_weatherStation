@@ -1,4 +1,6 @@
 #include "lcd_common.h"
+#include "I2C/i2c_common.h"
+#include <stdio.h>
 
 unsigned int lcd_position = 0;
 
@@ -26,24 +28,35 @@ void TIM3_init()
 	TIM_Cmd(TIM3, ENABLE);
 }
 
+
+
 void display_position(unsigned int position)
 {
 	lcd_cls();
+
+
+
+	char godzina[15], data[15], temperatura[15];
+//	sprintf(hexString, "0x%08X", RTC_data.temp);
+	sprintf(godzina, "%d:%d", RTC_data.godziny, RTC_data.minuty);
+	sprintf(data, "%d.%d.%dr", RTC_data.dzien, RTC_data.miesiac, RTC_data.rok);
+	sprintf(temperatura, "%d *C", RTC_data.godziny, RTC_data.minuty);
+
 	switch (position)
 	{
 		case 0:
 			lcd_str_center(0, "Godzina:");
-			lcd_str_center(1, "12:34:23");
+			lcd_str_center(1, godzina);
 		break;
 
 		case 1:
 			lcd_str_center(0, "Data:");
-			lcd_str_center(1, "20.05.14");
+			lcd_str_center(1, data);
 		break;
 
 		case 2:
 			lcd_str_center(0, "Temperatura:");
-			lcd_str_center(1, "25.0 *C");
+			lcd_str_center(1, temperatura);
 		break;
 
 		case 3:

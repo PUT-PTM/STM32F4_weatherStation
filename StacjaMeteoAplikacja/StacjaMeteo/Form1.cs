@@ -17,7 +17,7 @@ namespace StacjaMeteo
         private ChartArea MeteoGraph;
         private Series ChartSeries;
         private Legend ChartLegend;
-        
+
 
         public Form1()
         {
@@ -79,7 +79,7 @@ namespace StacjaMeteo
             Random random = new Random();
             for (int x = 24; x > 0; x--)
             {
-                  ChartSeries.Points.AddXY(DateTime.Now.AddHours(-x).ToOADate(), random.Next(-26, 51));
+                ChartSeries.Points.AddXY(DateTime.Now.AddHours(-x).ToOADate(), random.Next(-26, 51));
             }
 
 
