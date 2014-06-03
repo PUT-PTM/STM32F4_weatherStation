@@ -16,7 +16,13 @@ namespace StacjaMeteo
 {
     public partial class Form1 : Form
     {
-        private Chart chart1;
+        private readonly int        BaudRate    = 9600;
+        private readonly int        DataBits    = 8;
+        private readonly string     PortName    = "COM4";
+        private readonly string     Parity      = "None";
+        private readonly string     StopBits    = "One"; 
+
+        private Chart chartMeteoStation;
         private ChartArea MeteoGraph;
         private Series ChartSeries;
         private Legend ChartLegend;
@@ -24,20 +30,14 @@ namespace StacjaMeteo
         // The main control for communicating through the RS-232 port
         private SerialPort comport = new SerialPort();
 
-        private Settings settings = Settings.Default;
-
         public Form1()
-        {
-            // Load user settings
-            settings.Reload();
-            
+        {   
             InitializeComponent();
 
             // Restore the users settings
             InitializeControlValues();
-
-
-
+            
+            // rozmiar wyswietlanego okna
             this.ClientSize = new System.Drawing.Size(900, 410);
 
             // When data is recieved through the port, call this method
@@ -48,17 +48,17 @@ namespace StacjaMeteo
         private void Form1_Load(object sender, EventArgs e)
         {
             // utworzenie nowego wykresu
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartMeteoStation = new System.Windows.Forms.DataVisualization.Charting.Chart();
             // pozycja wykresu
-            chart1.Location = new System.Drawing.Point(10, 10);
+            chartMeteoStation.Location = new System.Drawing.Point(10, 10);
             // rozmiar wykresu
-            chart1.Size = new Size(880, 320);
+            chartMeteoStation.Size = new Size(880, 320);
 
 
 
             // dodanie serii danych na temperature
-            chart1.Series.Add("Temperature");
-            ChartSeries = chart1.Series["Temperature"];
+            chartMeteoStation.Series.Add("Temperature");
+            ChartSeries = chartMeteoStation.Series["Temperature"];
             // wykres liniowy
             ChartSeries.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
@@ -75,10 +75,10 @@ namespace StacjaMeteo
 
 
             // nazewnictwo serii danych
-            chart1.ChartAreas.Add("MeteoGraph");
-            chart1.Palette = ChartColorPalette.EarthTones;
+            chartMeteoStation.ChartAreas.Add("MeteoGraph");
+            chartMeteoStation.Palette = ChartColorPalette.EarthTones;
 
-            MeteoGraph = chart1.ChartAreas["MeteoGraph"];
+            MeteoGraph = chartMeteoStation.ChartAreas["MeteoGraph"];
             MeteoGraph.AxisX.Title = "Godzina";
             MeteoGraph.AxisX.LabelStyle.Format = "HH:mm";
             MeteoGraph.AxisX.Interval = 1;
@@ -106,37 +106,43 @@ namespace StacjaMeteo
 
             // legenda wykresu
             ChartSeries.LegendText = "temp";
-            chart1.Legends.Add("Legend");
-            ChartLegend = chart1.Legends["Legend"];
+            chartMeteoStation.Legends.Add("Legend");
+            ChartLegend = chartMeteoStation.Legends["Legend"];
             ChartLegend.BorderColor = Color.DarkRed;
 
 
 
             // dodanie wykresu do forma
-            Controls.Add(chart1);
+            Controls.Add(chartMeteoStation);
         }
 
 
         /// <summary> Populate the form's controls with default settings. </summary>
         private void InitializeControlValues()
         {
-            cmbParity.Items.Clear(); cmbParity.Items.AddRange(Enum.GetNames(typeof(Parity)));
-            cmbStopBits.Items.Clear(); cmbStopBits.Items.AddRange(Enum.GetNames(typeof(StopBits)));
+            cmbParity.Items.Clear(); 
+            cmbParity.Items.AddRange(Enum.GetNames(typeof(Parity)));
+            
+            cmbStopBits.Items.Clear(); 
+            cmbStopBits.Items.AddRange(Enum.GetNames(typeof(StopBits)));
 
-            cmbParity.Text = settings.Parity.ToString();
-            cmbStopBits.Text = settings.StopBits.ToString();
-            cmbDataBits.Text = settings.DataBits.ToString();
-            cmbParity.Text = settings.Parity.ToString();
-            cmbBaudRate.Text = settings.BaudRate.ToString();
+            cmbParity.Text = this.Parity;
+            cmbStopBits.Text = this.StopBits;
+            cmbDataBits.Text = this.DataBits.ToString();
+            cmbParity.Text = this.Parity;
+            cmbBaudRate.Text = this.BaudRate.ToString();
 
             RefreshComPortList();
 
-            //chkClearOnOpen.Checked = settings.ClearOnOpen;
-            //chkClearWithDTR.Checked = settings.ClearWithDTR;
-
             // If it is still avalible, select the last com port used
-            if (cmbPortName.Items.Contains(settings.PortName)) cmbPortName.Text = settings.PortName;
-            else if (cmbPortName.Items.Count > 0) cmbPortName.SelectedIndex = cmbPortName.Items.Count - 1;
+            if (cmbPortName.Items.Contains(this.PortName))
+            {
+                cmbPortName.Text = this.PortName;
+            }
+            else if (cmbPortName.Items.Count > 0)
+            {
+                cmbPortName.SelectedIndex = cmbPortName.Items.Count - 1;
+            }
             else
             {
                 MessageBox.Show(this, "There are no COM Ports detected on this computer.\nPlease install a COM Port and restart this app.", "No COM Ports Installed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -173,6 +179,7 @@ namespace StacjaMeteo
                 cmbPortName.SelectedItem = selected;
             }
         }
+
         private string[] OrderedPortNames()
         {
             // Just a placeholder for a successful parsing of a string to an integer
@@ -225,15 +232,15 @@ namespace StacjaMeteo
         {
             bool error = false;
 
-          // If the port is open, close it.
+            // If the port is open, close it.
             if (comport.IsOpen) comport.Close();
             else
             {
                 // Set the port's settings
-                comport.BaudRate = int.Parse(cmbBaudRate.Text);
+                comport.BaudRate =  int.Parse(cmbBaudRate.Text);
                 comport.DataBits = int.Parse(cmbDataBits.Text);
-                comport.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cmbStopBits.Text);
-                comport.Parity = (Parity)Enum.Parse(typeof(Parity), cmbParity.Text);
+                comport.StopBits = (StopBits) Enum.Parse(typeof(StopBits), cmbStopBits.Text);
+                comport.Parity = (Parity) Enum.Parse(typeof(Parity), cmbParity.Text);
                 comport.PortName = cmbPortName.Text;
 
                 try
@@ -245,17 +252,15 @@ namespace StacjaMeteo
                 catch (IOException) { error = true; }
                 catch (ArgumentException) { error = true; }
 
-                if (error) MessageBox.Show(this, "Could not open the COM port.  Most likely it is already in use, has been removed, or is unavailable.", "COM Port Unavalible", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                if (error)
+                {
+                    MessageBox.Show(this, "Could not open the COM port.  Most likely it is already in use, has been removed, or is unavailable.", "COM Port Unavalible", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
                 else
                 {
-                    // Show the initial pin states
-                    //UpdatePinState();
-                    //chkDTR.Checked = comport.DtrEnable;
-                    //chkRTS.Checked = comport.RtsEnable;
                     buttonDownload.Enabled = true;
                     System.Console.WriteLine("Polaczono z " + cmbPortName.Text);
                 }
-
             }
         }
 

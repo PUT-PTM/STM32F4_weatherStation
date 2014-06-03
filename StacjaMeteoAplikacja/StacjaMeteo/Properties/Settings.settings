@@ -1,24 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StacjaMeteo.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
   <Profiles />
-  <Settings>
-    <Setting Name="PortName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">COM4</Value>
-    </Setting>
-    <Setting Name="BaudRate" Type="System.String" Scope="User">
-      <Value Profile="(Default)">9600</Value>
-    </Setting>
-    <Setting Name="DataBits" Type="System.String" Scope="User">
-      <Value Profile="(Default)">8</Value>
-    </Setting>
-    <Setting Name="Parity" Type="System.String" Scope="User">
-      <Value Profile="(Default)">None</Value>
-    </Setting>
-    <Setting Name="DataMode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Text</Value>
-    </Setting>
-    <Setting Name="StopBits" Type="System.String" Scope="User">
-      <Value Profile="(Default)">One</Value>
-    </Setting>
-  </Settings>
+  <Settings />
 </SettingsFile>
