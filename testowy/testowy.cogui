@@ -16,41 +16,21 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
-<part id="3"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/main.c" title="main.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/main.c" title="main.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="647" selectionTopPixel="403"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="473" selectionTopPixel="403"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd_common.c" partName="lcd_common.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/LCD/lcd_common.c" title="lcd_common.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/LCD/lcd_common.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="lcd_common.c" partName="lcd_common.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/LCD/lcd_common.c" title="lcd_common.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/LCD/lcd_common.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/LCD/lcd_common.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="74" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2055" selectionTopPixel="642"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_common.c" partName="i2c_common.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/I2C/i2c_common.c" title="i2c_common.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/I2C/i2c_common.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/I2C/i2c_common.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="523" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_common.h" partName="i2c_common.h" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/I2C/i2c_common.h" title="i2c_common.h" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/I2C/i2c_common.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/I2C/i2c_common.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="374" selectionTopPixel="567"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="lcd_hd44780.c" partName="lcd_hd44780.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/LCD/lcd_hd44780.c" title="lcd_hd44780.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/LCD/lcd_hd44780.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/LCD/lcd_hd44780.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3373" selectionTopPixel="0"/>
-</editor>
-<editor id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" partName="Repository" title="Repository" tooltip="Repository" workbook="DefaultEditorWorkbook">
-<input factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory">&#x0A;<subPage horizontalPosition="0" selectedItemId="31" subPageIndex="2" verticalPosition="0"/>
-</input>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="printf.c" partName="printf.c" path="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/stdio/printf.c" title="printf.c" tooltip="C:/Users/Mateusz/Dropbox/Politechnika/semestr IV/PMT #2/repo/STM32F4_weatherStation/testowy/stdio/printf.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/testowy/stdio/printf.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="7" selectionOffset="11127" selectionTopPixel="7991"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="885" selectionTopPixel="338"/>
 </editor>
 </editors>
 <views>
@@ -62,6 +42,9 @@
 <element path="/testowy/stdio"/>
 <element path="/testowy/syscalls"/>
 </expanded>
+<selection>
+<element path="/testowy/main.c"/>
+</selection>
 </viewState>
 </view>
 <view id="org.coocox.codebugger.trace.ui.traceview" partName="Semihosting">
@@ -259,12 +242,8 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/I2C/i2c_common.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/I2C/i2c_common.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/LCD/lcd_common.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/I2C/i2c_common.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/LCD/lcd_hd44780.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/I2C/i2c_common.h"/>
 <editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
@@ -278,150 +257,155 @@
 </editor>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/stdio/printf.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/I2C/i2c_common.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/LCD/lcd_hd44780.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/I2C/i2c_common.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/stdio/printf.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/testowy/main.c"/>
 </editors>
-<item historyLabel="i2c_common.h" index="2">
-<position info="not_deleted" x="284" y="7"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="652" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="1814" y="0"/>
+<item historyLabel="lcd_common.c" index="0">
+<position info="not_deleted" x="1292" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="403" y="48"/>
+<item historyLabel="lcd_common.c" index="0">
+<position info="not_deleted" x="1043" y="0"/>
 </item>
-<item historyLabel="i2c_common.h" index="2">
-<position info="not_deleted" x="284" y="7"/>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="337" y="0"/>
+</item>
+<item historyLabel="lcd_common.c" index="0">
+<position info="not_deleted" x="1292" y="0"/>
+</item>
+<item historyLabel="lcd_common.c" index="0">
+<position info="not_deleted" x="1262" y="0"/>
+</item>
+<item historyLabel="i2c_common.h" index="3">
+<position info="not_deleted" x="143" y="15"/>
+</item>
+<item historyLabel="lcd_common.c" index="0">
+<position/>
 </item>
 <item historyLabel="i2c_common.c" index="1">
 <position info="not_deleted" x="523" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="403" y="48"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="441" y="0"/>
-</item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="403" y="48"/>
-</item>
-<item historyLabel="i2c_common.c" index="4">
-<position info="not_deleted" x="523" y="0"/>
-</item>
-<item historyLabel="lcd_hd44780.c" index="5">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="main.c" index="6">
-<position info="not_deleted" x="652" y="0"/>
-</item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="1292" y="0"/>
-</item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="1043" y="0"/>
-</item>
-<item historyLabel="main.c" index="6">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="337" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="1292" y="0"/>
-</item>
-<item historyLabel="lcd_common.c" index="3">
-<position info="not_deleted" x="1262" y="0"/>
-</item>
-<item historyLabel="i2c_common.h" index="7">
-<position info="not_deleted" x="143" y="15"/>
-</item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position/>
 </item>
-<item historyLabel="i2c_common.c" index="4">
-<position info="not_deleted" x="523" y="0"/>
-</item>
-<item historyLabel="main.c" index="6">
-<position info="not_deleted" x="337" y="0"/>
-</item>
-<item historyLabel="lcd_common.c" index="3">
-<position/>
-</item>
-<item historyLabel="i2c_common.h" index="7">
+<item historyLabel="i2c_common.h" index="3">
 <position info="not_deleted" x="143" y="15"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="88" y="0"/>
 </item>
-<item historyLabel="i2c_common.h" index="7">
+<item historyLabel="i2c_common.h" index="3">
 <position info="not_deleted" x="340" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1262" y="0"/>
 </item>
-<item historyLabel="i2c_common.h" index="7">
+<item historyLabel="i2c_common.h" index="3">
 <position info="not_deleted" x="374" y="0"/>
 </item>
-<item historyLabel="i2c_common.c" index="4">
+<item historyLabel="i2c_common.c" index="1">
 <position info="not_deleted" x="523" y="0"/>
 </item>
-<item historyLabel="main.c" index="6">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="337" y="0"/>
 </item>
-<item historyLabel="main.c" index="6">
+<item historyLabel="main.c" index="2">
 <position/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1043" y="0"/>
 </item>
-<item historyLabel="main.c" index="6">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="59" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position/>
 </item>
-<item historyLabel="main.c" index="6">
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="152" y="7"/>
 </item>
-<item historyLabel="Repository" index="8"/>
-<item historyLabel="main.c" index="6">
+<item historyLabel="Repository" index="4"/>
+<item historyLabel="main.c" index="2">
 <position info="not_deleted" x="128" y="4"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="54" y="2"/>
 </item>
-<item historyLabel="Repository" index="9"/>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="Repository" index="5"/>
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="72" y="2"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="968" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1430" y="0"/>
 </item>
-<item historyLabel="Repository" index="10"/>
-<item historyLabel="printf.c" index="11">
+<item historyLabel="Repository" index="6"/>
+<item historyLabel="printf.c" index="7">
 <position info="not_deleted" x="11127" y="7"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1430" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="970" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1262" y="34"/>
 </item>
-<item historyLabel="main.c" index="12">
+<item historyLabel="main.c" index="8">
 <position info="not_deleted" x="647" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1072" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1470" y="0"/>
 </item>
-<item historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1411" y="0"/>
 </item>
-<item active="true" historyLabel="lcd_common.c" index="3">
+<item historyLabel="lcd_common.c" index="0">
 <position info="not_deleted" x="1044" y="0"/>
+</item>
+<item historyLabel="i2c_common.c" index="9">
+<position info="not_deleted" x="523" y="0"/>
+</item>
+<item historyLabel="lcd_hd44780.c" index="10">
+<position info="not_deleted" x="3373" y="0"/>
+</item>
+<item historyLabel="i2c_common.c" index="9">
+<position info="not_deleted" x="285" y="0"/>
+</item>
+<item historyLabel="i2c_common.h" index="11">
+<position info="not_deleted" x="758" y="0"/>
+</item>
+<item historyLabel="i2c_common.c" index="9">
+<position info="not_deleted" x="285" y="0"/>
+</item>
+<item historyLabel="printf.c" index="12">
+<position info="not_deleted" x="11127" y="7"/>
+</item>
+<item historyLabel="i2c_common.c" index="9">
+<position info="not_deleted" x="285" y="0"/>
+</item>
+<item historyLabel="main.c" index="13">
+<position info="not_deleted" x="583" y="0"/>
+</item>
+<item historyLabel="i2c_common.c" index="9">
+<position info="not_deleted" x="885" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="13">
+<position info="not_deleted" x="583" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -430,6 +414,14 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
+<persistable>
+<org.coocox.welcome.ui.WelcomePage/>
+</persistable>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="STM32DiscoveryVCP/main.c">
+<persistable path="/STM32DiscoveryVCP/main.c"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="printf.c" tooltip="testowy/stdio/printf.c">
 <persistable path="/testowy/stdio/printf.c"/>
 </file>
@@ -468,12 +460,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="testowy/main.c">
 <persistable path="/testowy/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="LCD/main.c">
-<persistable path="/LCD/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd_common.c" tooltip="LCD/LCD/lcd_common.c">
-<persistable path="/LCD/LCD/lcd_common.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd_common.c" tooltip="LCD/LCD/lcd_common.c">
 <persistable path="/LCD/LCD/lcd_common.c"/>

@@ -15,7 +15,7 @@ void date(const uint8_t *rtc)
 	RTC_data.numerdnia = rtc[RTC_DAY_REG]&RTC_DAY_MASK;
 	RTC_data.dzien = rtc[RTC_DATE_REG] & RTC_DATE_MASK;
 	RTC_data.miesiac = rtc[RTC_MONTH_REG] & RTC_MONTH_MASK;
-	RTC_data.rok = "2014";//rtc[RTC_YEAR_REG];
+	RTC_data.rok = rtc[RTC_YEAR_REG];
 	RTC_data.rejestr = rtc[RTC_CONTROL_REG];
 }
 

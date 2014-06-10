@@ -59,6 +59,7 @@ void display_position(unsigned int position)
 			lcd_str_center(1, temperatura);
 		break;
 
+		/*
 		case 3:
 			lcd_str_center(0, "Wilgotnosc:");
 			lcd_str_center(1, "89%");
@@ -68,8 +69,9 @@ void display_position(unsigned int position)
 			lcd_str_center(0, "Cisnienie:");
 			lcd_str_center(1, "1012 hPa");
 		break;
+		*/
 
-		case 5:
+		case 3:
 			lcd_str_center(0, "Stacja Meteo:");
 			lcd_str_center(1, "0.8.5 xD");
 		break;
@@ -85,7 +87,7 @@ void TIM3_IRQHandler(void)
 	{
 		display_position(lcd_position);
 
-		(lcd_position == 5) ? (lcd_position = 0) : (lcd_position++);
+		(lcd_position == 3) ? (lcd_position = 0) : (lcd_position++);
 
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}
