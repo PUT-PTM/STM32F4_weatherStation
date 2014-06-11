@@ -42,7 +42,6 @@ namespace StacjaMeteo
 
             // When data is recieved through the port, call this method
             comport.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
-            //comport.PinChanged += new SerialPinChangedEventHandler(comport_PinChanged);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,16 +53,11 @@ namespace StacjaMeteo
             // rozmiar wykresu
             chartMeteoStation.Size = new Size(880, 320);
 
-
-
             // dodanie serii danych na temperature
             chartMeteoStation.Series.Add("Temperature");
             ChartSeries = chartMeteoStation.Series["Temperature"];
             // wykres liniowy
             ChartSeries.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-
-
-
 
             // typ osi X na "czas"
             ChartSeries.XValueType = ChartValueType.Time;
@@ -71,8 +65,6 @@ namespace StacjaMeteo
             ChartSeries.BorderWidth = 3;
             // styl osi na wykresie
             ChartSeries.BorderDashStyle = ChartDashStyle.Dash;
-
-
 
             // nazewnictwo serii danych
             chartMeteoStation.ChartAreas.Add("MeteoGraph");
@@ -85,24 +77,18 @@ namespace StacjaMeteo
             MeteoGraph.AxisX.IntervalType = DateTimeIntervalType.Hours;
             MeteoGraph.AxisX.LineWidth = 3;
 
-            // MeteoGraph.AxisX.Minimum = DateTime.Now.AddHours(-24).ToOADate();
-            // MeteoGraph.AxisX.Maximum = DateTime.Now.ToOADate();
-
             MeteoGraph.AxisY.Minimum = -25;
             MeteoGraph.AxisY.Maximum = 50;
             MeteoGraph.AxisY.Title = "Temperatura";
             MeteoGraph.AxisY.Interval = 5;
             MeteoGraph.AxisY.LineWidth = 3;
 
-
-
+            // losowe wypelnienie wartosciami
             Random random = new Random();
             for (int x = 24; x > 0; x--)
             {
                 ChartSeries.Points.AddXY(DateTime.Now.AddHours(-x).ToOADate(), random.Next(-26, 51));
             }
-
-
 
             // legenda wykresu
             ChartSeries.LegendText = "temp";
@@ -110,12 +96,9 @@ namespace StacjaMeteo
             ChartLegend = chartMeteoStation.Legends["Legend"];
             ChartLegend.BorderColor = Color.DarkRed;
 
-
-
             // dodanie wykresu do forma
             Controls.Add(chartMeteoStation);
         }
-
 
         /// <summary> Populate the form's controls with default settings. </summary>
         private void InitializeControlValues()
@@ -154,16 +137,13 @@ namespace StacjaMeteo
         {
             // If the com port has been closed, do nothing
             if (!comport.IsOpen) return;
-
-            // This method will be called when there is data waiting in the port's buffer
-
+                // This method will be called when there is data waiting in the port's buffer
 
                 // Read all the data waiting in the buffer
                 string data = comport.ReadExisting();
 
                 // Display the text to the user in the terminal
                 System.Console.WriteLine("[port_DataReceived]" + data);
- 
         }
 
         private void RefreshComPortList()
@@ -266,10 +246,24 @@ namespace StacjaMeteo
 
         private void buttonDownload_Click(object sender, EventArgs e)
         {
-            // Send the user's text straight out the port
             System.Console.WriteLine("[buttonDownload_Click] test");
             comport.Write("test");
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+
+            // set a default file name
+            savefile.FileName = "graph.png";
+            // set filters - this can be done in properties as well
+            savefile.Filter = "Image Files (*.bmp, *.jpg, *.png)|*.bmp;*.jpg;*.png";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                    this.chartMeteoStation.SaveImage(savefile.FileName, ChartImageFormat.Png);
+                    System.Console.WriteLine("Hello World!");
+            }
+        }
     }
 }
